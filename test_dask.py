@@ -57,6 +57,8 @@ def main():
 
     data1 = test_pandas(['./sample_data.int48.1m.txt' for i in range(2) ])
     data2 = test_dask(['./sample_data.int48.1m.txt' for i in range(2) ])
+    data1.to_csv('data1.csv', index=False)
+    data2.to_csv('data2.csv', index=False)
     print data1.shape, data2.shape
     print type(data1), type(data2)
     # should be all zero except the index column
